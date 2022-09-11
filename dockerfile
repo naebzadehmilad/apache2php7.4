@@ -74,5 +74,6 @@ ENV APACHE_LOG_DIR /var/log/apache2
 COPY openssl.cnf /usr/lib/ssl/
 ENV OPENSSL_CONF=/usr/lib/ssl/openssl.cnf
 RUN ln -sf /dev/stdout /var/log/apache2/access.log && ln -sf /dev/stderr /var/log/apache2/error.log
+WORKDIR /var/www/html/
 EXPOSE 80
 CMD apachectl -D FOREGROUND 
